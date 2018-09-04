@@ -22,7 +22,7 @@ bash ./test.sh
 
 ## Input
 
-First two numbers are the starting cell.
+First two numbers are the starting cell (row, column).
 
 Second line contains two numbers that represent the target cell.
 
@@ -39,16 +39,20 @@ An input example (it's read from `stdin`).
 
 ```
 1 1
-7 16
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 2 2 2 0 0 0 0 1 0 0 0 0 0 0 0 0 1
-1 2 2 2 2 2 0 0 0 0 0 1 0 0 1 0 0 1
-1 2 2 2 0 0 0 0 0 0 0 0 0 1 0 0 0 1
-1 2 2 2 0 2 0 0 1 0 0 0 0 0 0 0 2 1
-1 0 2 2 2 2 0 0 0 0 0 1 0 0 0 0 0 1
-1 0 0 0 0 2 0 0 0 0 0 0 0 0 0 2 2 1
-1 0 0 1 0 0 0 1 0 0 0 0 0 1 0 2 2 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+11 21
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 2 2 2 0 1 0 0 0 2 0 0 2 2 0 0 1 3 0 0 0 0 1
+1 2 2 0 0 1 2 2 0 0 1 3 1 0 0 0 0 1 0 0 0 0 1
+1 2 0 3 0 1 2 2 1 0 0 1 0 0 1 1 0 0 1 0 0 0 1
+1 0 0 0 1 0 0 1 2 2 0 0 0 0 1 0 2 0 0 0 0 0 1
+1 0 1 0 0 3 0 0 1 0 0 3 0 2 2 2 0 0 0 1 1 0 1
+1 0 0 1 0 2 0 0 0 0 3 0 1 0 2 2 0 1 0 0 0 0 1
+1 0 1 0 1 2 0 1 0 2 0 1 2 0 0 1 0 2 2 1 2 3 1
+1 0 0 0 1 2 1 1 2 2 0 1 2 2 1 0 0 0 2 2 1 0 1
+1 2 0 0 0 0 0 0 2 0 0 1 0 0 0 1 0 0 2 0 0 0 1
+1 2 2 3 1 0 3 2 2 2 0 1 0 0 3 0 1 0 2 0 2 1 1
+1 0 0 0 0 0 0 2 2 0 0 1 0 0 0 0 0 1 2 2 2 2 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 ```
 
 ## Output
@@ -56,13 +60,25 @@ An input example (it's read from `stdin`).
 Output will be written to `stdout`. Example.
 
 ```
+↓
+↓
+↓
 →
+↑
 →
+↑
+↑
 →
 ↓
 →
 →
+→
 ↓
+↓
+→
+↓
+→
+→
 ```
 
 If there's no route, it will print `no`.

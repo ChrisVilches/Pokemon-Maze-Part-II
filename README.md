@@ -14,7 +14,7 @@ Holes make the character fall and of course that'd mean a route that goes throug
 
 You'll also find boulders that can be destroyed, but you only have a predefined number of boulders you can break, so breaking every single one of them isn't always the optimal solution.
 
-The route that needs the least moves will be found. Sliding through ice counts as one move.
+The route that needs the least moves will be found. Sliding across ice counts as one move.
 
 ## Run all tests
 
@@ -42,7 +42,7 @@ After that, there can be any number of lines that represent each row of the map.
 4 Breakable boulder
 ```
 
-An input example (it's read from `stdin`).
+An input example (it's read from `stdin`). So if this text is in a `file.txt` you can execute `ruby main.rb < file.txt` to run the algorithm and solve it.
 
 ```
 1 1

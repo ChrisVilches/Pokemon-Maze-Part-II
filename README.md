@@ -42,7 +42,7 @@ After that, there can be any number of lines that represent each row of the map.
 4 Breakable boulder
 ```
 
-An input example (it's read from `stdin`). So if this text is in a `file.txt` you can execute `ruby main.rb < file.txt` to run the algorithm and solve it.
+An input example (it's read from `stdin`). So if this text is in `file.txt` you can execute `ruby main.rb < file.txt` to run the algorithm and solve it.
 
 ```
 1 1

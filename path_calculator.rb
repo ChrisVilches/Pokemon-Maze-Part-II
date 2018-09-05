@@ -17,7 +17,6 @@ class PathCalculator
     prev = Array.new(@maze.length){Array.new(@maze[0].length)}
     dist = Array.new(@maze.length){Array.new(@maze[0].length)}
 
-    # Deep cloning
     (0..visited.length-1).each do |i|
       (0..visited[0].length-1).each do |j|
         visited[i][j] = false

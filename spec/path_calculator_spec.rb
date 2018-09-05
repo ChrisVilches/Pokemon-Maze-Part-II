@@ -2,7 +2,7 @@ require_relative '../path_calculator'
 require_relative '../path'
 
 describe PathCalculator do
-  it "should be true" do
+  it "should get the path correctly" do
 
     files = Dir["./spec/data/in*"]
 
@@ -29,7 +29,7 @@ describe PathCalculator do
 
       path_calc = PathCalculator.new maze
 
-      path = path_calc.get_path(start: start, finish: finish, boulder_break_remaining: boulder_break_count)
+      path = path_calc.get_path(start: start, finish: finish, boulder_break_count: boulder_break_count)
 
       arrows = (Path.new path).to_arrows
 
@@ -41,11 +41,8 @@ describe PathCalculator do
         text_arrows = out_text.split ' '
         expect(text_arrows).to match_array(arrows)
       end
-
     end
 
 
-
-    expect(1).to be 1
   end
 end

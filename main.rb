@@ -20,7 +20,7 @@ end
 
 path_calc = PathCalculator.new maze
 
-path = path_calc.get_path(start: start, finish: finish, boulder_break_remaining: boulder_break_count)
+path = path_calc.get_path(start: start, finish: finish, boulder_break_count: boulder_break_count)
 
 arrows = (Path.new path).to_arrows
 

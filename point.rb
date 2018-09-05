@@ -13,7 +13,7 @@ class Point
   end
 
   def ==(o)
-    self.i == o.i && self.j == o.j
+    !o.nil? && self.i == o.i && self.j == o.j
   end
 
   def to_s

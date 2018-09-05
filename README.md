@@ -12,12 +12,16 @@ There's also normal land, where the character can move freely.
 
 Holes make the character fall and of course that'd mean a route that goes through a hole wouldn't be a correct solution.
 
+You'll also find boulders that can be destroyed, but you only have a predefined number of boulders you can break, so breaking every single one of them isn't always the optimal solution.
+
+The route that needs the least moves will be found. Sliding through ice counts as one move.
+
 ## Run all tests
 
-Use the following command to run every test case.
+Use the following command to run every test case. You need the `rspec` gem first, install it using `gem install rspec`.
 
 ```bash
-bash ./test.sh
+rspec spec/*
 ```
 
 ## Input
@@ -26,6 +30,8 @@ First two numbers are the starting cell (row, column).
 
 Second line contains two numbers that represent the target cell.
 
+The third line must have a positive number with how many boulders it can break.
+
 After that, there can be any number of lines that represent each row of the map.
 
 ```
@@ -33,26 +39,28 @@ After that, there can be any number of lines that represent each row of the map.
 1 Wall (or boulder)
 2 Normal land
 3 Hole
+4 Breakable boulder
 ```
 
 An input example (it's read from `stdin`).
 
 ```
 1 1
-11 21
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 2 2 2 0 1 0 0 0 2 0 0 2 2 0 0 1 3 0 0 0 0 1
-1 2 2 0 0 1 2 2 0 0 1 3 1 0 0 0 0 1 0 0 0 0 1
-1 2 0 3 0 1 2 2 1 0 0 1 0 0 1 1 0 0 1 0 0 0 1
-1 0 0 0 1 0 0 1 2 2 0 0 0 0 1 0 2 0 0 0 0 0 1
-1 0 1 0 0 3 0 0 1 0 0 3 0 2 2 2 0 0 0 1 1 0 1
-1 0 0 1 0 2 0 0 0 0 3 0 1 0 2 2 0 1 0 0 0 0 1
-1 0 1 0 1 2 0 1 0 2 0 1 2 0 0 1 0 2 2 1 2 3 1
-1 0 0 0 1 2 1 1 2 2 0 1 2 2 1 0 0 0 2 2 1 0 1
-1 2 0 0 0 0 0 0 2 0 0 1 0 0 0 1 0 0 2 0 0 0 1
-1 2 2 3 1 0 3 2 2 2 0 1 0 0 3 0 1 0 2 0 2 1 1
-1 0 0 0 0 0 0 2 2 0 0 1 0 0 0 0 0 1 2 2 2 2 1
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+11 4
+2
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 2 2 2 2 2 1 1 1 1 1 1 1 1
+1 1 1 1 2 1 1 1 2 1 1 1 1 1 1 1 1
+1 1 1 1 4 1 1 1 2 1 1 1 1 1 1 1 1
+1 1 1 1 2 1 1 1 4 1 1 1 1 1 1 1 1
+1 1 1 1 2 1 1 1 2 1 1 1 1 1 1 1 1
+1 1 1 1 4 1 1 1 2 1 1 1 1 1 1 1 1
+1 1 1 1 2 2 2 2 2 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 ```
 
 ## Output
@@ -60,25 +68,16 @@ An input example (it's read from `stdin`).
 Output will be written to `stdout`. Example.
 
 ```
-↓
-↓
-↓
-→
-↑
-→
-↑
-↑
-→
-↓
 →
 →
 →
 ↓
 ↓
-→
 ↓
-→
-→
+↓
+↓
+↓
+↓
 ```
 
 If there's no route, it will print `no`.
